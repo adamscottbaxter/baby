@@ -1,6 +1,7 @@
 class SentencesController < ApplicationController
 	def index
 		@sentence = Sentence.new
+		@sentences = Sentence.all
 	end
 
 	def create
@@ -8,6 +9,7 @@ class SentencesController < ApplicationController
 		if @sentence.save
 			redirect_to sentences_path
 		else
+			@sentences = Sentence.all
 			render 'index'
 		end
 	end

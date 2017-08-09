@@ -1,2 +1,16 @@
 <h1>Baby Words</h1>
 <%= render 'form' %>
+<table>
+	<tr>
+		<th>Sentence</th>
+		<th>New Words</th>
+		<th>Date Spoken</th>
+	</tr>
+	<% @sentences.each do |s| %>
+		<tr>
+			<td><%= s.content&.capitalize %></td>
+			<td><%= s.words&.map(&:content) %></td>
+			<td><%= s.date_spoken %></td>
+		</tr>
+	<% end %>
+</table>

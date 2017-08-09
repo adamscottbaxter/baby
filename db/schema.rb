@@ -22,7 +22,8 @@ ActiveRecord::Schema.define(version: 20170809030524) do
 
   create_table "words", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "sentence_id"
-    t.text "content"
+    t.text "content", null: false
+    t.datetime "date_spoken", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["content"], name: "index_words_on_content", unique: true, length: { content: 10 }

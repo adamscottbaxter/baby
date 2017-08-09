@@ -15,6 +15,6 @@ class SentencesController < ApplicationController
 	private
 
 	def sentence_params
-		params.require(:sentence).permit(:content)
+		params.require(:sentence).permit(:content, :date_spoken)
 	end
 end

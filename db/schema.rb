@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20170809020856) do
 
   create_table "sentences", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "content", null: false
-    t.datetime "date_spoken", default: "2017-08-09 02:16:07", null: false
+    t.datetime "date_spoken", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

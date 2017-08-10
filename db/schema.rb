@@ -10,6 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20170809030524) do
 
+  create_table "sentences", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "content", null: false
+    t.datetime "date_spoken", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["content"], name: "index_sentences_on_content", unique: true, length: { content: 10 }
+  end
+
+  create_table "words", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "sentence_id"
+    t.text "content", null: false
+    t.datetime "date_spoken", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["content"], name: "index_words_on_content", unique: true, length: { content: 10 }
+    t.index ["sentence_id"], name: "index_words_on_sentence_id"
+  end
+
+  add_foreign_key "words", "sentences"
 end

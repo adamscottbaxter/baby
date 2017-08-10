@@ -1,0 +1,12 @@
+<%= form_for @sentence do |f| %>
+	<% if @sentence.errors.any? %>
+	<ul>
+		<% @sentence.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	</ul>
+	<% end %>
+	<%= f.text_field :content, value: @sentence.content, placeholder: 'content' %>
+	<%= f.hidden_field :date_spoken, value: DateTime.now %>
+	<%= f.submit %>
+<% end %>

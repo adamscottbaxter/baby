@@ -1,11 +1,11 @@
-# README
+[![Build Status](https://travis-ci.org/adamscottbaxter/baby.svg?branch=master)](https://travis-ci.org/adamscottbaxter/baby)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# README
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version - 2.4.1
+* Rails version - 5.1.2
 
 * System dependencies
 
